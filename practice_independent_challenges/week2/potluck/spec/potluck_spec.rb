@@ -41,7 +41,7 @@ describe Potluck do
          @potluck.add_dish(@summer_pizza)
          @potluck.add_dish(@roast_pork)
          @potluck.add_dish(@cocktail_meatballs)
-         @potluck.add_dish(@couscous_salad)
+         
          expected = [@couscous_salad, @summer_pizza]
          expect(@potluck.get_all_from_category(:appetizer)).to eq (expected)
       end
