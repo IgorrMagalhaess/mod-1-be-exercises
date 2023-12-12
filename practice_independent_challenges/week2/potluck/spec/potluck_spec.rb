@@ -66,4 +66,9 @@ describe Potluck do
          expect(@potluck.get_all_from_category(:appetizer).first.name).to eq (expected)
       end
    end
+
 end
+
+
+
+
