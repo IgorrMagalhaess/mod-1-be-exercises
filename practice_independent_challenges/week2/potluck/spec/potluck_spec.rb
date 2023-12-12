@@ -66,9 +66,19 @@ describe Potluck do
          expect(@potluck.get_all_from_category(:appetizer).first.name).to eq (expected)
       end
    end
+# MENU METHOD SORT ALPHABETCALLY 
+   describe '#menu' do
+      it 'sort food according to its category' do
+         @potluck.add_dish(@couscous_salad)
+         @potluck.add_dish(@summer_pizza)
+         @potluck.add_dish(@roast_pork)
+         @potluck.add_dish(@cocktail_meatballs)
+         @potluck.add_dish(@candy_salad)
+         @potluck.add_dish(@bean_dip)
 
+         expected = {:appetizer=>["Bean Dip", "Couscous Salad", "Summer Pizza"],:entre=>["Cocktail Meatballs", "Roast Pork"],:dessert=>["Candy Salad"]}
+         expect(@potluck.menu).to eq (expected)
+
+      end
+   end
 end
-
-
-
-
