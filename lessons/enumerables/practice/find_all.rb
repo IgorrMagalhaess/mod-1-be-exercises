@@ -101,7 +101,7 @@ end
     elements = ["cat", {:dog=>"fido"}, 23, {:stuff=>"things"}, "aimless", 43]
 
     elements.find_all do |element|
-      element.is_a? Hash
+      element.class == Hash
     end
 
     #  expected return value is [{:dog=>"fido"}, {:stuff=>"things"}]

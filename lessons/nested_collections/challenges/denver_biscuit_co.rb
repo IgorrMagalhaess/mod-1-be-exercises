@@ -105,23 +105,69 @@ denver_biscuit_co = {
 
 # Challenge 1:
 # Return the name ("Denver Biscuit")
+p denver_biscuit_co[:name]
 # Return the rating (4.5)
+p denver_biscuit_co[:rating]
+
 # Return a list of accepted transactions (["pickup", "delivery"])
+p denver_biscuit_co[:transactions]
+
 # Return the first listed category title ("Sandwiches")
+p denver_biscuit_co[:categories][0][:title]
+
 # Return the opening hour on Tuesday (day 1) ("0800")
+p denver_biscuit_co[:hours][0][:open][1][:start]
+
 # Return the closing hour on Saturday (day 5) ("1500")
+p denver_biscuit_co[:hours][0][:open][5][:end]
+
 # Return the current open status (is_now_open) (true)
+p denver_biscuit_co[:hours][0][:is_open_now]
+
 
 # Challenge 2: 
 # Get the address, and return it into a readable format. ("3237 E Colfax Ave, Denver, CO 80206" )
-# Return a list of categories this restaurant fits into (["Sandwiches", "Breakfast & Brunch"])
+p "#{denver_biscuit_co[:location][:display_address][0]}, #{denver_biscuit_co[:location][:display_address][1]}"
 
+# Return a list of categories this restaurant fits into (["Sandwiches", "Breakfast & Brunch"])
+categories = denver_biscuit_co[:categories].map { |category| category[:title] }
+p categories
 
 # Challenge 3 (extra spicy): 
 # Get the operation hours, and format a return value such that it looks like this: 
+operation_hours = {}
+operation_hours[:Monday] = {}
+operation_hours[:Monday][:start] = denver_biscuit_co[:hours][0][:open][0][:start]
+operation_hours[:Monday][:end] = denver_biscuit_co[:hours][0][:open][0][:end]
+
+operation_hours[:Tuesday] = {}
+operation_hours[:Tuesday][:start] = denver_biscuit_co[:hours][0][:open][1][:start]
+operation_hours[:Tuesday][:end] = denver_biscuit_co[:hours][0][:open][1][:end]
+
+operation_hours[:Wednesday] = {}
+operation_hours[:Wednesday][:start] = denver_biscuit_co[:hours][0][:open][2][:start]
+operation_hours[:Wednesday][:end] = denver_biscuit_co[:hours][0][:open][2][:end]
+
+operation_hours[:Thursday] = {}
+operation_hours[:Thursday][:start] = denver_biscuit_co[:hours][0][:open][3][:start]
+operation_hours[:Thursday][:end] = denver_biscuit_co[:hours][0][:open][3][:end]
+
+operation_hours[:Friday] = {}
+operation_hours[:Friday][:start] = denver_biscuit_co[:hours][0][:open][4][:start]
+operation_hours[:Friday][:end] = denver_biscuit_co[:hours][0][:open][4][:end]
+
+operation_hours[:Saturday] = {}
+operation_hours[:Saturday][:start] = denver_biscuit_co[:hours][0][:open][5][:start]
+operation_hours[:Saturday][:end] = denver_biscuit_co[:hours][0][:open][5][:end]
+
+operation_hours[:Sunday] = {}
+operation_hours[:Sunday][:start] = denver_biscuit_co[:hours][0][:open][6][:start]
+operation_hours[:Sunday][:end] = denver_biscuit_co[:hours][0][:open][6][:end]
+
+p operation_hours
 
 # {
-#     Monday: {
+#     Monday: { 
 #             start: "0800" , 
 #             end: "1400"
 #         },
