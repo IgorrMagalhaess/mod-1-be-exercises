@@ -29,7 +29,7 @@ end
 def lengths
     names = ["alice", "bob", "charlie", "david", "eve"]
 
-    names.map{|name| name.length}
+    names.map(&:length)
 
     # expected return value is [5, 3, 7, 5, 3]
 end
