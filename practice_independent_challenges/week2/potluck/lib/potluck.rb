@@ -23,4 +23,16 @@ class Potluck
       end
       menu
    end
+
+   def ratio(category)
+      total_dishes = @dishes.length.to_f
+      category_count = @dishes.count { |dish| dish.category == category }
+
+      if total_dishes > 0
+         ratio = (category_count / total_dishes) * 100
+         ratio.round(1)
+      else
+         0.0
+      end
+   end
 end
