@@ -80,4 +80,18 @@ describe Potluck do
          expect(@potluck.menu).to eq (expected)
       end
    end
+
+   describe '#ratio' do
+      it 'return the ratio of each category from all the dishes' do
+         @potluck.add_dish(@couscous_salad)
+         @potluck.add_dish(@summer_pizza)
+         @potluck.add_dish(@roast_pork)
+         @potluck.add_dish(@cocktail_meatballs)
+         @potluck.add_dish(@candy_salad)
+         @potluck.add_dish(@bean_dip)
+
+         expected = 50.0
+         expect(@potluck.ratio(:appetizer)).to eq (expected)
+      end
+   end
 end
