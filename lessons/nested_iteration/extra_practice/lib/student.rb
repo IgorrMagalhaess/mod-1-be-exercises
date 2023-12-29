@@ -6,4 +6,6 @@ class Student
     @name = name
     @group = nil
   end
+
+ 
 end

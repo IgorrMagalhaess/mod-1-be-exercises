@@ -10,6 +10,17 @@ cities_lived_in = {
 # Get a unique list of all of the cities that these humans have lived in  
 # ["Philadelphia", "Fort Collins", "Seattle", "Denver", "Santa Fe", "Portland", "Lansing", "Columbus", "Austin"]
 
+cities_lived = []
+
+cities_lived_in.each do |name, cities|
+    cities.each do |city|
+        if !cities_lived.include?(city)
+            cities_lived << city
+        end
+    end
+end
+p cities_lived
+
 
 
 
@@ -21,7 +32,14 @@ cities_lived_in = {
 # or
 # ["Michaela", "Mike", "Alex"]
 
+philly_people = []
 
+cities_lived_in.each do |name, cities|
+    if cities_lived_in[name].include? "Philadelphia"
+        philly_people << name
+    end
+end
+p philly_people
 
 
 # Problem #3: 
@@ -38,3 +56,13 @@ cities_lived_in = {
 #     "Columbus => 1,
 #     "Austin" => 1
 # }
+
+city_count = {}
+
+cities_lived_in.each do |_person, cities|
+  cities.each do |city|
+    city_count[city] ||= 0
+    city_count[city] += 1
+  end
+end
+p city_count

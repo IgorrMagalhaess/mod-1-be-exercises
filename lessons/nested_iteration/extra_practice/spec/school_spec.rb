@@ -65,7 +65,7 @@ RSpec.describe School do
       expect(@school.groups.include?(@student1.group)).to eq(true)
     end
 
-    xit 'can assign all students to groups at once' do
+    it 'can assign all students to groups at once' do
       @school.add_course(@course1)
       @school.add_course(@course2)
       @school.add_course(@course3)
